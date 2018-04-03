@@ -1,0 +1,16 @@
+global:
+  scrape_interval:     15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: nimiq
+    scheme: https
+    basic_auth:
+      username: metrics
+      password: secret
+    static_configs:
+      - targets:
+          - nimiq1.example.com:8649
+          - nimiq2.example.com:8649
+        labels:
+          network: test
